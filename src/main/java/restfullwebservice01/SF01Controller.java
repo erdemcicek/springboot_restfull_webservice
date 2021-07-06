@@ -19,7 +19,6 @@ public class SF01Controller {
 //		return "Get Request is taken...";
 //	}
 	
-	
 	// 2.Way: Recommended
 	@GetMapping(path="/getRequest")
 	public String getMethod1() {
@@ -42,6 +41,5 @@ public class SF01Controller {
 					   new SF02ControllerBean(String.format("How are you %s", name)),
 					   new SF02ControllerBean(String.format("%s do you want some coffee", name))
 				);
-	}
-	
+	}	
 }
