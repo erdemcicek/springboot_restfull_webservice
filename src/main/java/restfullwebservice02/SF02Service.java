@@ -37,13 +37,10 @@ public class SF02Service {
 		}	
 		return studentList.stream().filter(t->t.getId()==id).findFirst().get();
 		
-		
 		// for return type String
 //		if(studentList.stream().noneMatch(t->t.getId()==id)) {
 //			return "No match";
 //		}	
 //		return studentList.stream().filter(t->t.getId()==id).findFirst().get().toString();
-		
 	}
-
 }
