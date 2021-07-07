@@ -50,11 +50,4 @@ public class SF03StudentBeanController {
 		return ResponseEntity.ok(studentService.updateStdPartially(id, student));
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 }
