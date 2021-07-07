@@ -51,21 +51,4 @@ public class SF03StudentBeanController {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
