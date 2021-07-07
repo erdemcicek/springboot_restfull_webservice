@@ -80,7 +80,6 @@ public class SF03StudentBeanService {
 		
 	}
 	
-	
 	//The method will be for partially update
 	public SF03StudentBean updateStdPartially(Long id, SF03StudentBean newStudent) {
 		
@@ -109,31 +108,4 @@ public class SF03StudentBeanService {
 		return studentRepo.save(existingStudentById);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
