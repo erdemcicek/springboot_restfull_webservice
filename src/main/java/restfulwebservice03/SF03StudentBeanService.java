@@ -1,11 +1,9 @@
-package restfullwebservice03;
+package restfulwebservice03;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 import java.util.Optional;
-
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,13 +22,13 @@ public class SF03StudentBeanService {
 		return studentRepo.findAll();
 	}
 	
-//	public SF03StudentBean selectStdById(Long id) {		
-//		if(studentRepo.findById(id).isPresent()) {
-//			return studentRepo.findById(id).get();			
-//		}else{
-//			return new SF03StudentBean();	
-//		}
-//	}
+	public SF03StudentBean selectStdById(Long id) {		
+		if(studentRepo.findById(id).isPresent()) {
+			return studentRepo.findById(id).get();			
+		}else{
+			return new SF03StudentBean();	
+		}
+	}
 	//For invalid ids, the method will throw IllegalStateException with "id does not exist" message
 	//For valid ids, student with the id will be removed from the database and you will get a success
 	//message on the console like "Student whose id is 'id' is successfully deleted"
@@ -80,6 +78,7 @@ public class SF03StudentBeanService {
 		
 	}
 	
+	
 	//The method will be for partially update
 	public SF03StudentBean updateStdPartially(Long id, SF03StudentBean newStudent) {
 		
@@ -108,4 +107,5 @@ public class SF03StudentBeanService {
 		return studentRepo.save(existingStudentById);
 		
 	}
+
 }

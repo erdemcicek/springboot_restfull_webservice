@@ -1,4 +1,4 @@
-package restfullwebservice02;
+package restfulwebservice02;
 
 import java.util.List;
 

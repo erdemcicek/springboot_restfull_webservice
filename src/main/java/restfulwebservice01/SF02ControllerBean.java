@@ -1,4 +1,4 @@
-package restfullwebservice01;
+package restfulwebservice01;
 
 
 public class SF02ControllerBean {

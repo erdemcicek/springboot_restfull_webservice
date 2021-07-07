@@ -1,4 +1,4 @@
-package restfullwebservice03;
+package restfulwebservice03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
