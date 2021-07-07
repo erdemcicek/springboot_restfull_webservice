@@ -21,7 +21,5 @@ public class SF03StudentBeanConfig {
 				
 				studentRepo.saveAll(List.of(aliCan, veliHan, maryStar));
 			};
-			
 		}
-
 }
