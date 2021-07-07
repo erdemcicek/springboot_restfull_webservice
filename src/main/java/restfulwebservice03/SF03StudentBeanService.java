@@ -29,6 +29,7 @@ public class SF03StudentBeanService {
 			return new SF03StudentBean();	
 		}
 	}
+	
 	//For invalid ids, the method will throw IllegalStateException with "id does not exist" message
 	//For valid ids, student with the id will be removed from the database and you will get a success
 	//message on the console like "Student whose id is 'id' is successfully deleted"
@@ -78,7 +79,6 @@ public class SF03StudentBeanService {
 		
 	}
 	
-	
 	//The method will be for partially update
 	public SF03StudentBean updateStdPartially(Long id, SF03StudentBean newStudent) {
 		
@@ -107,5 +107,4 @@ public class SF03StudentBeanService {
 		return studentRepo.save(existingStudentById);
 		
 	}
-
 }
