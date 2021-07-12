@@ -12,10 +12,6 @@ public class SpringbootRestfullWebserviceApplication {
 
 }
 
-
-
-
-
 /*
 	Form-based Authentication
 	1) How to create Form-Based Authentication
@@ -43,6 +39,5 @@ public class SpringbootRestfullWebserviceApplication {
 		spring.security.user.password=
 		
 	4) Get Request method has less security than the others in SpringBoot
-
 
 */
