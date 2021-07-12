@@ -149,26 +149,10 @@ public class SF03StudentBeanService {
 		}
 		
 		
-		
-		
-		
 		newStudent.setId(maxId + 1);
 		
 		return studentRepo.save(newStudent);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
