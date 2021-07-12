@@ -1,16 +1,17 @@
 package restfulwebservice03;
 
 public enum ApplicationUserPermissions {
-
+	
 	STUDENT_READ("student:read"),
-	ADMIN_READ("admin:read"),
-	ADMIN_WRITE("admin:write");
-
+	STUDENT_WRITE("student:write");
+	
 	private final String permission;
 
 	public String getPermission() {
 		return permission;
 	}
-
-	ApplicationUserPermissions(String permission) {this.permission=permission;}
+	
+	private ApplicationUserPermissions(String permission) {
+		this.permission = permission;
+	}
 }
