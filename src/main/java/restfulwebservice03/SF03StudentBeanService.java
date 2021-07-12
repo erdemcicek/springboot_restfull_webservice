@@ -1,5 +1,10 @@
 package restfulwebservice03;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
@@ -75,6 +80,8 @@ public class SF03StudentBeanService {
 			existingStudentById.setDob(newStudent.getDob());
 		}
 		
+		existingStudentById.setAge(newStudent.getAge());
+		existingStudentById.setErrMsg("No error...");
 		return studentRepo.save(existingStudentById);
 		
 	}
@@ -104,7 +111,64 @@ public class SF03StudentBeanService {
 			existingStudentById.setEmail(newStudent.getEmail());			
 		}
 		
+//		if(newStudent.getDob().isBefore(LocalDate.now())) then update
+		
+		
 		return studentRepo.save(existingStudentById);
 		
 	}
+	
+	// This method is to add new student into database
+	public SF03StudentBean addStudent(SF03StudentBean newStudent) throws ClassNotFoundException, SQLException {
+		
+//		studentRepo.findAll().stream().anyMatch(null)
+		
+		Optional<SF03StudentBean> existingStudentByEmail = studentRepo.findSF03StudentBeanByEmail(newStudent.getEmail());
+		
+		if(existingStudentByEmail.isPresent()) {
+			throw new IllegalStateException("Email exists in DB...");
+		}
+		
+		if(newStudent.getName()==null) {
+			throw new IllegalStateException("Name must be entered for new students");
+		}
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521", "hr", "hr");
+		
+		Statement st = con.createStatement();
+		
+		String sql = "SELECT max(id) FROM students09";
+		ResultSet result = st.executeQuery(sql);
+		
+		Long maxId = 0L;
+		
+		while(result.next()) {
+			maxId = result.getLong("id");
+		}
+		
+		
+		
+		
+		
+		newStudent.setId(maxId + 1);
+		
+		return studentRepo.save(newStudent);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
