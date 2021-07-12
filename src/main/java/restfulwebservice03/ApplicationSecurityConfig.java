@@ -1,5 +1,5 @@
 //package restfulwebservice03;
-//
+
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,16 +14,16 @@
 //@Configuration
 //@EnableWebSecurity
 //public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
-//
+
 //	private final PasswordEncoder passwordEncoder;
-//	
+
 //	public ApplicationSecurityConfig(PasswordEncoder passwordEncoder) {
 //		this.passwordEncoder = passwordEncoder;
 //	}
-//
+
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
-//		
+		
 //		http.
 //			authorizeRequests().
 //			// If you want some pages not to ask username and password,
@@ -35,7 +35,7 @@
 //			and().
 //			httpBasic();
 //	}
-//
+
 //	@Override
 //	@Bean
 //	protected UserDetailsService userDetailsService() {
@@ -57,7 +57,7 @@
 //		
 //		return new InMemoryUserDetailsManager(student, admin);
 //	}
-//
-//	
-//	
+
+
+	
 //}
