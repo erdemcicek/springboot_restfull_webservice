@@ -4,7 +4,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import static restfulwebservice03.ApplicationUserPermissions.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import com.google.common.collect.Sets;
 
 public enum ApplicationUserRoles {
@@ -30,6 +29,4 @@ public enum ApplicationUserRoles {
         
         return permissions;
         }
-
-
 }
