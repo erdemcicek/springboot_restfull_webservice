@@ -20,6 +20,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final PasswordEncoder passwordEncoder;
+	
 	@Autowired
 	public ApplicationSecurityConfig(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;

@@ -1,6 +1,7 @@
 package restfulwebservice03;
 
 import java.util.Set;
+
 import java.util.stream.Collectors;
 import static restfulwebservice03.ApplicationUserPermissions.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +24,9 @@ public enum ApplicationUserRoles {
 	
 	public Set<SimpleGrantedAuthority> getGrantedAuthorities(){
         
-        Set<SimpleGrantedAuthority> permissions = getPermissions().stream().map(permission -> new SimpleGrantedAuthority(permission.getPermission())).collect(Collectors.toSet());
+        Set<SimpleGrantedAuthority> permissions = getPermissions().stream().
+        										  map(permission -> new SimpleGrantedAuthority(permission.getPermission())).
+        										  collect(Collectors.toSet());
         
         permissions.add(new SimpleGrantedAuthority("ROLE_" + this.name()));
         
