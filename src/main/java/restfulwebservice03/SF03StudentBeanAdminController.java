@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SF03StudentBeanAdminController {
 
-	
 	private SF03StudentBeanService studentService;
 
 	@Autowired
@@ -51,11 +50,13 @@ public class SF03StudentBeanAdminController {
 	public ResponseEntity<SF03StudentBean> updateStudent(@PathVariable Long id, @Validated @RequestBody SF03StudentBean student){
 		return ResponseEntity.ok(studentService.updateStudent(id, student));		
 	}
+	
 	/*
 	 	Note: If you do not put @PreAuthorize("hasAuthority('student:write')")
 	 	for PATCH method, all users can use PATCH method, because it is open
 	 	to all as default.
 	 */
+	
 	@PatchMapping(path = "/admin/api/v1/updateStudentsPartially/{id}")
 	public ResponseEntity<SF03StudentBean> updateStudentPartially(@PathVariable Long id, @Validated @RequestBody SF03StudentBean student){
 		return ResponseEntity.ok(studentService.updateStdPartially(id, student));		
@@ -66,4 +67,5 @@ public class SF03StudentBeanAdminController {
 	public ResponseEntity<SF03StudentBean> updateStudentPartially(@Validated @RequestBody SF03StudentBean student) throws ClassNotFoundException, SQLException{
 		return ResponseEntity.ok(studentService.addStudent(student));		
 	}
+	
 }
